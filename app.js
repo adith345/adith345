@@ -48,6 +48,6 @@ app.post("/contact",(req,res)=>{
     res.status(400).send('item was not saved to the databse')
 })})
 
-app.listen(port,()=>{
+app.listen(port,hostname,()=>{
     console.log(`The application started successfully on port ${port}`);
 })
