@@ -1,0 +1,22 @@
+{
+  "name": "adith345",
+  "version": "1.0.0",
+  "description": "this my first node ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adith345/adith345.git"
+  },
+  "keywords": [
+    "ExpressJS"
+  ],
+  "author": "adith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adith345/adith345/issues"
+  },
+  "homepage": "https://github.com/adith345/adith345#readme"
+}
