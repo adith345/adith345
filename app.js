@@ -9,7 +9,8 @@ const bodyparser = require('body-parser')
 // * For serving static files
 app.use('/static', express.static('static'))
 //* this helps in serving form code to exess
-app.use(express.urlencoded())
+
+app.use(express.urlencoded({extended: true}));
 //*Setting Mongoose
 const mongoose = require('mongoose');
 const { resolveSoa } = require("dns");
