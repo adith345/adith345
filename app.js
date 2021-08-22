@@ -73,7 +73,7 @@ app.post("/contact",(req,res)=>{
     mydata.save().then(()=>{
     res.render('demo.pug',saved)
     }).catch(()=>{
-    res.status(400).send('item was not saved to the databse')
+    res.status(400).render('ren.pug')
 })})
 app.get('/cool', (req, res) => res.send(cool()))
 app.get('/times', (req, res) => res.send(showTimes()))
