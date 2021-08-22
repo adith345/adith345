@@ -1,5 +1,6 @@
 // *This is basic template for express
 const express = require("express");
+const cool = require('cool-ascii-faces');
 const fs = require("fs");
 // const { join } = require("path");
 const app = express();
@@ -47,7 +48,7 @@ app.post("/contact",(req,res)=>{
     }).catch(()=>{
     res.status(400).send('item was not saved to the databse')
 })})
-
+app.get('/cool', (req, res) => res.send(cool()))
 app.listen(port,()=>{
     console.log(`The application started successfully on port ${port}`);
 })
