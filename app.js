@@ -9,6 +9,33 @@ const path = require('path');
 const bodyparser = require('body-parser')
 // * For serving static files
 app.use('/static', express.static('static'))
+showTimes = () => {
+  let result = '';
+  const times = process.env.TIMES || 5;
+  for (i = 0; i < times; i++) {
+    result += i + ' ';
+  }
+  return result;
+}
+const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+app.get('/db', async (req, res) => {
+    try {
+      const client = await pool.connect();
+      const result = await client.query('SELECT * FROM test_table');
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/db', results );
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
 //* this helps in serving form code to exess
 
 app.use(express.urlencoded({extended: true}));
@@ -49,6 +76,7 @@ app.post("/contact",(req,res)=>{
     res.status(400).send('item was not saved to the databse')
 })})
 app.get('/cool', (req, res) => res.send(cool()))
+app.get('/times', (req, res) => res.send(showTimes()))
 app.listen(port,()=>{
     console.log(`The application started successfully on port ${port}`);
 })
