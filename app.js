@@ -4,7 +4,7 @@ const cool = require('cool-ascii-faces');
 const fs = require("fs");
 // const { join } = require("path");
 const app = express();
-const port = 80;
+const port = process.env.PORT || 5000;
 const path = require('path');
 const bodyparser = require('body-parser')
 // * For serving static files
