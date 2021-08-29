@@ -1,0 +1,6 @@
+#+TITLE: Readme
+#+DESCRIPTION:  You have to follow this commands
+* All Commands you to follow
+** npm install (this installs all modules you need)
+** node app.js
+* END
