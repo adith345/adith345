@@ -1,7 +1,7 @@
 #+TITLE: Follow this Cmds
 #+DESCRIPTION:  You have to follow this commands
- # npm install (this installs all modules you need)
- # node app.js (this is node file)
- # Go to Browser and type "localhost"
- # And Your Website is ready
- #+TITLE:END
+## npm install (this installs all modules you need)
+## node app.js (this is node file)
+## Go to Browser and type "localhost"
+## And Your Website is ready
+#+TITLE:END
