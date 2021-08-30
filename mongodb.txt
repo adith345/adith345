@@ -1,0 +1,21 @@
+Fist of all make a file
+ /etc/systemd/system/mongodb.service
+Containing
+/*
+GNU nano 4.8
+systemd/system/mongodb.service                                                                                      
+[Unit]
+Description=High-performance, schema-free document-oriented database
+After=network.target
+
+[Service]
+User=mongodb
+ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf
+
+[Install]
+WantedBy=multi-user.target */
+
+And Use this Commands
+sudo mkdir -p /data/db
+sudo chown -R $USER /data/db
+
